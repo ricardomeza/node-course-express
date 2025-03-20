@@ -1,0 +1,17 @@
+meta {
+  name: DELETE api v1 products
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://localhost:3005/api/v1/products/f0a1b28f-6ebd-4e40-9531-7b8b63bb7f2b
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "name": "New Product"
+  }
+}

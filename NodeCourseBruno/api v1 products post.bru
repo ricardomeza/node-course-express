@@ -1,0 +1,19 @@
+meta {
+  name: api v1 products post
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3005/api/v1/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "New Product xxx",
+    "price": 123234.53,
+    "image": "https://loremflickr.com/2216/2166?lock=6942947032166335"
+  }
+}

@@ -1,0 +1,17 @@
+meta {
+  name: PATCH api v1 products
+  type: http
+  seq: 5
+}
+
+patch {
+  url: http://localhost:3005/api/v1/products/920db62a-9970-4d88-9839-22a466e03418
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "New Product yyy"
+  }
+}
