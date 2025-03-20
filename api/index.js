@@ -1,4 +1,4 @@
-// const cors = require('cors');
+const cors = require('cors');
 const express = require('express');
 const routerApi = require('./routes');
 const {
@@ -13,17 +13,23 @@ const port = process.env.PORT || 3005;
 
 app.use(express.json());
 
-// const corsWhiteList = ['http://localhost:8005'];
-// const options = {
-//   origin: (origin, callback) => {
-//     if (corsWhiteList.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not permited'));
-//     }
-//   },
-// };
-// app.use(cors(options));
+const corsWhiteList = [
+  'http://localhost:8005',
+  'https://node-course-express.vercel.app',
+];
+const options = {
+  origin: (origin, callback) => {
+    if (!origin) {
+      return callback(null, true);
+    }
+    if (corsWhiteList.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not permited'));
+    }
+  },
+};
+app.use(cors(options));
 
 app.get('/api', (req, res) => {
   res.send('Personal API Project');
