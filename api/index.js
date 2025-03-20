@@ -9,7 +9,7 @@ const {
 const {} = require('./schemas/product.schema');
 
 const app = express();
-const port = 3005;
+const port = process.env.PORT || 3005;
 
 app.use(express.json());
 
@@ -25,11 +25,11 @@ app.use(express.json());
 // };
 // app.use(cors(options));
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Personal API Project');
 });
 
-app.get('/new', (req, res) => {
+app.get('/api/new', (req, res) => {
   res.send('New route!');
 });
 
