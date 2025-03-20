@@ -31,9 +31,7 @@ class ProudctsService {
 
   async find() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(this.products);
-      }, 1000);
+      resolve(this.products);
     });
   }
 
